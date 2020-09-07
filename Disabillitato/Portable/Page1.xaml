@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:telerikInput="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+             xmlns:telerikPrimitives="clr-namespace:Telerik.XamarinForms.Primitives;assembly=Telerik.XamarinForms.Primitives"
+             x:Class="Disabillitato.Portable.Page1"
+             NavigationPage.HasNavigationBar="False">
+
+    
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackLayout Margin="10,0">
+
+            <ImageButton Source="TwitterCircleIcon.png" />
+
+            <Label Text="Log into your account"
+                   Style="{StaticResource TitleLabelStyle}"
+                   x:Name="login_text_label" />
+
+            <telerikInput:RadEntry x:Name="username_field"
+                                   WatermarkText="Username"
+                                   Style="{StaticResource LoginEntryStyle}"
+                                   Keyboard="Email"/>
+
+            <telerikInput:RadEntry x:Name="password_field"
+                                   WatermarkText="Password"
+                                   IsPassword="True"
+                                   Style="{StaticResource LoginEntryStyle}" />
+
+            <telerikInput:RadButton Text="LOGIN"
+                                    x:Name="login_button"
+                                    Clicked="Login_button_Clicked"
+                                    Style="{StaticResource ActionButtonStyle}" />
+
+            <telerikInput:RadButton Text="Forgot your Password?"
+                                    x:Name="forgot_password_button"
+                                    Clicked="Forgot_password_button_Clicked"
+                                    Style="{StaticResource SecondaryActionButtonStyle}"
+                                    FontAttributes="None" />
+        </StackLayout>
+
+        <Grid x:Name="SocialButtonsGrid"
+              VerticalOptions="Start"
+              HorizontalOptions="Center"
+              Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="56" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="56" />
+                <ColumnDefinition Width="88" />
+                <ColumnDefinition Width="56" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="or login with:"
+                   Style="{StaticResource NormalLabelStyle}"
+                   Grid.Row="0"
+                   Grid.Column="1" />
+
+            <telerikPrimitives:RadBorder CornerRadius="27" WidthRequest="54" HeightRequest="54">
+
+            </telerikPrimitives:RadBorder>
+
+
+        </Grid>
+    </Grid>
+</ContentPage>
